@@ -1,0 +1,1 @@
+g++     CMakeFiles/objects.dir/src/main.cpp.o  -o ../bin/Bluetooth_mp3  -lmpg123 -lao -lpthread 

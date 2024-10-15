@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pi/src/estereo_bluetooth/src/main.cpp
+iostream
+-
+cstdlib
+-
+cstring
+-
+unistd.h
+-
+bluetooth/bluetooth.h
+-
+bluetooth/rfcomm.h
+-
+bluetooth/hci.h
+-
+bluetooth/hci_lib.h
+-
+
