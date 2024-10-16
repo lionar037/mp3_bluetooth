@@ -1,9 +1,25 @@
-//////////////////////
+//////////////////////////////////////////////////////////////////
 //
-//          bluetooth_tool.cpp
+//                  bluetooth_tool.cpp
+// 
+// Descripción: Este archivo implementa las funciones de la clase
+//              `BluetoothTool` que permiten la conexión a un 
+//              dispositivo Bluetooth utilizando RFCOMM y la 
+//              reproducción de archivos MP3 a través de un 
+//              comando del sistema. También se incluye una 
+//              función auxiliar para convertir direcciones MAC 
+//              en formato de cadena a la estructura `bdaddr_t`.
 //
-//////////////////////
-
+// Dependencias:
+//              - bluetooth_tool.hpp: Definición de la clase 
+//                `BluetoothTool`.
+//              - Librerías de Bluetooth de Linux: hci.h, hci_lib.h, 
+//                bluetooth.h y rfcomm.h.
+//
+// Autor: [Tu nombre]
+// Fecha: [Fecha actual]
+//
+//////////////////////////////////////////////////////////////////
 
 #include <bluetooth_tool.hpp>
 #include <iostream>
@@ -20,61 +36,76 @@
 namespace BLUETOOTH {
 
 // Función para convertir una cadena MAC a bdaddr_t manualmente
-    void stringToBdAddr(const std::string& mac_str, bdaddr_t* bdaddr) {
-        int values[6];
-        if (sscanf(mac_str.c_str(), "%x:%x:%x:%x:%x:%x", 
-            &values[0], &values[1], &values[2], 
-            &values[3], &values[4], &values[5]) != 6) {
-            std::cerr << "Error: Dirección MAC inválida." << std::endl;
-            return;
-        }
-
-        for (int i = 0; i < 6; ++i) {
-            bdaddr->b[i] = static_cast<uint8_t>(values[5 - i]);  // Llenado en orden inverso
-        }
+// La función toma una dirección MAC en formato de cadena y la convierte
+// en una estructura `bdaddr_t`, que es requerida para operaciones Bluetooth.
+void stringToBdAddr(const std::string& mac_str, bdaddr_t* bdaddr) {
+    int values[6];
+    // Separar la dirección MAC en seis valores hexadecimales
+    if (sscanf(mac_str.c_str(), "%x:%x:%x:%x:%x:%x", 
+        &values[0], &values[1], &values[2], 
+        &values[3], &values[4], &values[5]) != 6) {
+        std::cerr << "Error: Dirección MAC inválida." << std::endl;
+        return;
     }
 
-    BluetoothTool::BluetoothTool() : sock(-1) {}
+    // Llenar la estructura bdaddr_t en orden inverso
+    for (int i = 0; i < 6; ++i) {
+        bdaddr->b[i] = static_cast<uint8_t>(values[5 - i]);  // Llenado en orden inverso
+    }
+}
 
-    BluetoothTool::~BluetoothTool() {
-        if (sock != -1) {
-            close(sock);  // Cerrar el socket si está abierto
-        }
+// Constructor de la clase BluetoothTool
+// Inicializa el socket a -1 indicando que no hay conexión activa
+BluetoothTool::BluetoothTool() : sock(-1) {}
+
+// Destructor de la clase BluetoothTool
+// Si el socket está abierto, lo cierra para liberar los recursos.
+BluetoothTool::~BluetoothTool() {
+    if (sock != -1) {
+        close(sock);  // Cerrar el socket si está abierto
+    }
+}
+
+// Método para conectar al dispositivo Bluetooth
+// Toma la dirección MAC del dispositivo, crea un socket Bluetooth,
+// convierte la dirección a `bdaddr_t` y trata de conectarse al dispositivo.
+int BluetoothTool::conectar(const std::string& mac_address) {
+    struct sockaddr_rc addr = { 0 };  // Estructura para la dirección RFCOMM
+    int status;
+
+    // Crear socket Bluetooth
+    sock = socket(AF_BLUETOOTH, SOCK_STREAM, BTPROTO_RFCOMM);
+    if (sock == -1) {
+        perror("Error al crear el socket");
+        return -1;
     }
 
-    int BluetoothTool::conectar(const std::string& mac_address) {
-        struct sockaddr_rc addr = { 0 };
-        int status;
+    addr.rc_family = AF_BLUETOOTH;  // Especificar la familia Bluetooth
+    addr.rc_channel = (uint8_t)1;   // Asignar el canal RFCOMM (1 por defecto)
 
-        // Crear socket Bluetooth
-        sock = socket(AF_BLUETOOTH, SOCK_STREAM, BTPROTO_RFCOMM);
-        if (sock == -1) {
-            perror("Error al crear el socket");
-            return -1;
-        }
+    // Convertir manualmente la dirección MAC a `bdaddr_t`
+    stringToBdAddr(mac_address, &addr.rc_bdaddr);
 
-        addr.rc_family = AF_BLUETOOTH;
-        addr.rc_channel = (uint8_t)1;  // Canal RFCOMM del dispositivo
-
-        // Convertir manualmente la dirección MAC
-        stringToBdAddr(mac_address, &addr.rc_bdaddr);
-
-        // Intentar conectar al dispositivo
-        status = connect(sock, (struct sockaddr*)&addr, sizeof(addr));
-        if (status == -1) {
-            perror("Error al conectar");
-            return -1;
-        }
-
-        std::cout << "Conectado al dispositivo Bluetooth: " << mac_address << std::endl;
-        return sock;
+    // Intentar conectar al dispositivo
+    status = connect(sock, (struct sockaddr*)&addr, sizeof(addr));
+    if (status == -1) {
+        perror("Error al conectar");
+        return -1;
     }
 
-    void BluetoothTool::reproducirMP3(const std::string& archivo) {
-        std::string comando = "mpg123 " + archivo;
-        std::cout << "Reproduciendo archivo: " << archivo << std::endl;
-        system(comando.c_str());
-    }
+    // Si la conexión es exitosa, se imprime un mensaje
+    std::cout << "Conectado al dispositivo Bluetooth: " << mac_address << std::endl;
+    return sock;
+}
+
+// Método para reproducir un archivo MP3 en el dispositivo Bluetooth conectado
+// Utiliza el comando del sistema `mpg123` para reproducir el archivo especificado.
+void BluetoothTool::reproducirMP3(const std::string& archivo) {
+    // Construir el comando para ejecutar `mpg123`
+    std::string comando = "mpg123 " + archivo;
+    std::cout << "Reproduciendo archivo: " << archivo << std::endl;
+    // Ejecutar el comando del sistema
+    system(comando.c_str());
+}
 
 }  // namespace BLUETOOTH
-
