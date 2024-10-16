@@ -16,8 +16,8 @@
 //              - Librerías de Bluetooth de Linux: hci.h, hci_lib.h, 
 //                bluetooth.h y rfcomm.h.
 //
-// Autor: [Tu nombre]
-// Fecha: [Fecha actual]
+// Autor: lion
+// Fecha: 2024 Octb
 //
 //////////////////////////////////////////////////////////////////
 

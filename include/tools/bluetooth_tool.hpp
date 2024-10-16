@@ -16,8 +16,8 @@
 //              - bluetooth.h: Librería para el manejo de Bluetooth.
 //              - rfcomm.h: Librería para la comunicación RFCOMM.
 //
-// Autor: [Tu nombre]
-// Fecha: [Fecha actual]
+// Autor: lion
+// Fecha: 2024 Octb
 //
 //////////////////////////////////////////////////////////////////
 
