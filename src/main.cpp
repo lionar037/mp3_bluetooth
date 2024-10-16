@@ -1,10 +1,16 @@
+//////////////////////////////////////////////////////////////////
+//
+//                      main.cpp
+//
+//////////////////////////////////////////////////////////////////
+
 #include <bluetooth_tool.hpp>
 #include <iostream>
 
 #define BLUETOOTH_DIR "00:13:7B:DC:2C:E0"
 
 int main() {
-/*    BluetoothTool bluetoothTool;
+    BLUETOOTH::BluetoothTool bluetoothTool;
     const std::string dispositivo_mac = BLUETOOTH_DIR;  // Dirección MAC del dispositivo
 
     // Conectar a dispositivo Bluetooth
@@ -16,6 +22,6 @@ int main() {
 
     // Reproducir archivo MP3
     bluetoothTool.reproducirMP3("musica.mp3");
-*/
+
     return 0;
 }

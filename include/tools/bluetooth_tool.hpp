@@ -1,3 +1,11 @@
+//////////////////////
+//
+//          bluetooth_tool.hpp
+//
+//////////////////////
+
+
+
 #pragma once
 //#ifndef BLUETOOTH_TOOL_HPP
 //#define BLUETOOTH_TOOL_HPP
@@ -8,21 +16,20 @@
 
 namespace BLUETOOTH{
 
-class BluetoothTool {
-public:
-    BluetoothTool();
-    ~BluetoothTool();
+    class BluetoothTool {
+    public:
+        BluetoothTool();
+        ~BluetoothTool();
 
-    // Conectar a un dispositivo Bluetooth por RFCOMM
-    int conectar(const std::string& mac_address);
+        // Conectar a un dispositivo Bluetooth por RFCOMM
+        int conectar(const std::string& mac_address);
 
-    // Reproducir un archivo MP3
-    void reproducirMP3(const std::string& archivo);
+        // Reproducir un archivo MP3
+        void reproducirMP3(const std::string& archivo);
 
-private:
-    int sock;  // Socket para la conexión Bluetooth
-};
+    private:
+        int sock;  // Socket para la conexión Bluetooth
+    };
 
-}
-
-//#endif // BLUETOOTH_TOOL_HPP
+}//END BLUETOOTH
+   //#endif // BLUETOOTH_TOOL_HPP
