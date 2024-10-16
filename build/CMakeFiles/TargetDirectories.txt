@@ -1,4 +1,4 @@
-/home/pi/src/estereo_bluetooth/build/CMakeFiles/rebuild_cache.dir
-/home/pi/src/estereo_bluetooth/build/CMakeFiles/edit_cache.dir
-/home/pi/src/estereo_bluetooth/build/CMakeFiles/Bluetooth_mp3.dir
-/home/pi/src/estereo_bluetooth/build/CMakeFiles/objects.dir
+/home/pi/src/extern_bluetooth_mp3/build/CMakeFiles/rebuild_cache.dir
+/home/pi/src/extern_bluetooth_mp3/build/CMakeFiles/edit_cache.dir
+/home/pi/src/extern_bluetooth_mp3/build/CMakeFiles/Bluetooth_mp3.dir
+/home/pi/src/extern_bluetooth_mp3/build/CMakeFiles/objects.dir

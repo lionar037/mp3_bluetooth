@@ -6,21 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/home/pi/src/estereo_bluetooth/src/main.cpp
-iostream
--
-cstdlib
--
-cstring
--
-unistd.h
+../include/tools/bluetooth_tool.hpp
+string
 -
 bluetooth/bluetooth.h
 -
 bluetooth/rfcomm.h
 -
+
+/home/pi/src/extern_bluetooth_mp3/src/tools/bluetooth_tool.cpp
+bluetooth_tool.hpp
+-
+iostream
+-
+cstdlib
+-
+unistd.h
+-
 bluetooth/hci.h
 -
 bluetooth/hci_lib.h
+-
+cstring
 -
 

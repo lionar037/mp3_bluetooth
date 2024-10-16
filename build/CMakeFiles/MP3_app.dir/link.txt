@@ -1,1 +1,0 @@
-g++     CMakeFiles/objects.dir/src/main.cpp.o  -o ../bin/MP3_app  -lmpg123 -lao -lpthread 

@@ -4,7 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/pi/src/estereo_bluetooth/src/main.cpp" "/home/pi/src/estereo_bluetooth/build/CMakeFiles/objects.dir/src/main.cpp.o"
+  "/home/pi/src/extern_bluetooth_mp3/src/main.cpp" "/home/pi/src/extern_bluetooth_mp3/build/CMakeFiles/objects.dir/src/main.cpp.o"
+  "/home/pi/src/extern_bluetooth_mp3/src/tools/bluetooth_tool.cpp" "/home/pi/src/extern_bluetooth_mp3/build/CMakeFiles/objects.dir/src/tools/bluetooth_tool.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -13,7 +14,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../include"
   "../include/mp3"
   "../include/assets"
-  "../include/bluetooth"
+  "../include/tools"
   )
 
 # Targets to which this target links.

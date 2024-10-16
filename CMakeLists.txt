@@ -26,7 +26,7 @@ include_directories(
     include 
     include/mp3
     include/assets
-	include/bluetooth
+	include/tools
 )
 
 # Definir las rutas de salida de binarios y archivos objeto
@@ -36,7 +36,7 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_SOURCE_DIR}/build/lib)
 
 # Recursivamente obtener todos los archivos fuente en las carpetas src/
 file(GLOB_RECURSE SOURCES
-    src/*.cpp
+    src/*.cpp    
 )
 
 # Crear una biblioteca de objetos con los archivos fuente del proyecto principal
