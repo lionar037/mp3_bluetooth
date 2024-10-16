@@ -1,0 +1,11 @@
+
+
+codeAlls.cpp
+.DS_Store
+assets/sound
+bin/
+build/
+.vscode/
+obj/
+.git/
+olds/
