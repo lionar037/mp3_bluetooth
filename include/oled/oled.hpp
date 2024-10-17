@@ -8,6 +8,7 @@
 #include <SSD1306_OLED.hpp>
 #include <memory>
 #include <vector>
+#include <algorithm>
 #include <string>
 
 namespace OLED{
