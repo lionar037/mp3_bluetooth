@@ -78,7 +78,7 @@ for(const auto& it_play_list : stash_list){
     // Convertir a mayúsculas la subcadena y luego mostrarla en la pantalla OLED
     std::string display_text = it_play_list.substr(14, it_play_list.size() - 18);    oled->displayText(it_play_list.substr(14).c_str(), 0, 0); // Pasar la cadena convertida a C-string
     std::cout << display_text << "\n"; // Imprimir la cadena convertida a mayúsculas
-    oled->displayText(display_text, 0, 0);
+    oled->displayText(display_text.c_str(), 0, 0);
 
     bcm2835_delay(1900);             
 }
