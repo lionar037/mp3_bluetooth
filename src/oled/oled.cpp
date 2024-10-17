@@ -43,21 +43,29 @@ namespace OLED{
         myOLED.OLEDclearBuffer();
     }
 
-    void Oled_t::displayText(const char* text, int x, int y) {
-        //myOLED.setFontNum(OLEDFont_ArialRound);
+    void Oled_t::displayTextScroll(const char* text, int x, int y) {
+        myOLED.setFontNum(OLEDFont_ArialRound);
+        //myOLED.setFontNum(OLEDFont_Default);
+        myOLED.setTextColor(BLACK, WHITE); 
+        myOLED.setTextColor(WHITE);
+        myOLED.setCursor(x, y);
+        myOLED.print(text);
+        myOLED.OLEDupdate();		
+		myOLED.OLEDStartScrollLeft (0, 0x0F);		
+		bcm2835_delay(3000);
+		myOLED.OLEDStopScroll();
+    }
+
+
+    void Oled_t::displayText(const char* text, int x, int y) {        
         myOLED.setFontNum(OLEDFont_Default);
         myOLED.setTextColor(BLACK, WHITE); 
         myOLED.setTextColor(WHITE);
         myOLED.setCursor(x, y);
         myOLED.print(text);
-        myOLED.OLEDupdate();
-		
-		myOLED.OLEDStartScrollLeft (0, 0x0F);
-		
-		bcm2835_delay(2000);
-		myOLED.OLEDStopScroll();
-
+        myOLED.OLEDupdate();							
     }
+
 
     void Oled_t::powerDown() {
         myOLED.OLEDPowerDown();

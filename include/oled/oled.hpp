@@ -17,6 +17,7 @@ public:
     bool begin(bool i2c_debug = false);
     void clearScreen();
     void displayText(const char* text, int x, int y);
+    void displayTextScroll(const char* text, int x, int y) ;
     void powerDown();
 //protected:
     void demo();
