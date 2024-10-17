@@ -17,7 +17,7 @@ namespace SOUND_LIST{
         public:
             SoundList_t();
             ~SoundList_t()=default;
-
+            const std::vector <std::string>& convertToMayuscule(const std::vector <std::string>& display_text );
             const std::vector <std::string>& get_list()const {
                 //sound_list() ;
                 return mp3_list;
