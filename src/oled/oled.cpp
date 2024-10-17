@@ -84,15 +84,15 @@ namespace OLED{
     //myOLED.fillRoundRect(0, 40, 40, 20, 10, !colour);
     //myOLED.drawRect(70 + i, 40 + i, 50 - i * 2, 20 - i * 2, WHITE);
     //myOLED.OLEDupdate();
-
+myOLED.setFontNum(OLEDFont_ArialRound);
 	myOLED.setRotation(OLED_Degrees_0);
 	// Define a buffer to cover whole screen 
-	uint8_t  screenBuffer[FULLSCREEN]; 
+	uint8_t  screenBuffer[128*32]; 
 	if (!myOLED.OLEDSetBufferPtr(myOLEDwidth, myOLEDheight, screenBuffer, sizeof(screenBuffer))) return;
 	myOLED.OLEDclearBuffer(); // clear the buffer
 
 	// Set text parameters
-	myOLED.setTextColor(WHITE);
+	myOLED.setTextColor(BLACK);
 	myOLED.setTextSize(1);
 
 	//  ** Test 501 OLED display enable and disable **
@@ -101,23 +101,23 @@ namespace OLED{
 	printf("OLED Disable test 501\r\n");
 	myOLED.OLEDupdate();
 
-	bcm2835_delay(2000); 
+	bcm2835_delay(900); 
 	myOLED.OLEDEnable(0); 
-	bcm2835_delay(2000); 
+	bcm2835_delay(900); 
 	myOLED.OLEDEnable(1); 
-	bcm2835_delay(2000); 
+	bcm2835_delay(900); 
 	myOLED.OLEDclearBuffer();
 
 	// ** Test 502 inverse **
-	myOLED.setCursor(0, 10);
+	myOLED.setCursor(0, 0);
 	myOLED.print("Inverse test 502");
 	printf("OLED Inverse test 502\r\n");
 	myOLED.OLEDupdate();
-	bcm2835_delay(1500);
+	bcm2835_delay(900);
 	myOLED.OLEDInvert(1); // Inverted
-	bcm2835_delay(1500);
+	bcm2835_delay(900);
 	myOLED.OLEDInvert(0);
-	bcm2835_delay(1500);
+	bcm2835_delay(900);
 
 	// ** Test 503 contrast **
 	myOLED.OLEDclearBuffer();
@@ -138,8 +138,8 @@ namespace OLED{
 	myOLED.OLEDclearBuffer();
 
 	// ***** Test 504 Scroll **
-	myOLED.setCursor(20,20 );
-	myOLED.print("Scroll test 504");
+	myOLED.setCursor(0,0 );
+	myOLED.print("SCROLL EST 504  ");
 	printf("OLED Scroll test 504\r\n");
 	myOLED.OLEDupdate();
 	bcm2835_delay(2500);
@@ -161,6 +161,7 @@ namespace OLED{
 	myOLED.OLEDStopScroll();
  	
  	
+    /*
  	// ** Test 505 rotate test **
  	
  	myOLED.OLEDclearBuffer();
@@ -208,5 +209,6 @@ namespace OLED{
 	myOLED.print("End of tests");
 	myOLED.OLEDupdate();
 	bcm2835_delay(3000);
+    */
     }
 }
