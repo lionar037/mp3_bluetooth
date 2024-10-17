@@ -7,5 +7,4 @@ bin/
 build/
 .vscode/
 obj/
-.git/
 olds/
