@@ -44,8 +44,8 @@ namespace OLED{
     }
 
     void Oled_t::displayTextScroll(const char* text, int x, int y) {
-        myOLED.setFontNum(OLEDFont_Mednum);
-        //myOLED.setFontNum(OLEDFont_Default);
+        //myOLED.setFontNum(OLEDFont_Mednum);
+        myOLED.setFontNum(OLEDFont_Default);
         myOLED.setTextColor(BLACK, WHITE); 
         myOLED.setTextColor(WHITE);
         myOLED.setCursor(x, y);
