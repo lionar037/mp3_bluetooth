@@ -31,9 +31,11 @@
 #define RPI2W   "B8:27:EB:0B:70:57"           //example
 #define SONY    "00:13:7B:DC:2C:E0" 
 #define MOTO    "6C:97:6D:55:CE:99"
-#define BLUETOOTH_DIR MOTO  // Dirección MAC del dispositivo Bluetooth
+#define MACADDR_BLTH MOTO  // Dirección MAC del dispositivo Bluetooth
 
 int main() {
+    
+    const std::string device_mac = MACADDR_BLTH; 
     // Instancia del objeto BluetoothTool
     BLUETOOTH::BluetoothTool bluetoothTool;
 
@@ -51,7 +53,7 @@ int main() {
     bcm2835_delay(600);
 
     // Dirección MAC del dispositivo Bluetooth a conectar
-    const std::string device_mac = BLUETOOTH_DIR;  
+     
     
     //oled->clearScreen();
     oled->displayText(device_mac.c_str(), 0,10);
