@@ -69,10 +69,10 @@ int main() {
     oled->displayText(device_mac.c_str(), 0,10);
     bcm2835_delay(1600); 
 
-auto stash_list = play_list;
+//auto stash_list = oled->convertToMayuscule(play_list);
 
 
-for(const auto& it_play_list : stash_list){
+for(const auto& it_play_list : oled->convertToMayuscule(play_list)){
     oled->clearScreen();
     
     // Convertir a mayúsculas la subcadena y luego mostrarla en la pantalla OLED
