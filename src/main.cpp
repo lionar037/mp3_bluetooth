@@ -25,8 +25,10 @@
 #include <oled.hpp>
 #include <memory>
 
-
-#define BLUETOOTH_DIR "00:13:7B:DC:2C:E0" // Dirección MAC del dispositivo Bluetooth
+#define RPI4    "D8:3A:DD:18:46:7F"            //example
+#define RPI2W   "B8:27:EB:0B:70:57"           //example
+#define SONY    "00:13:7B:DC:2C:E0" 
+#define BLUETOOTH_DIR RPI4  // Dirección MAC del dispositivo Bluetooth
 
 int main() {
     // Instancia del objeto BluetoothTool
