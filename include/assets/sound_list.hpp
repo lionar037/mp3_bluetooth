@@ -4,6 +4,7 @@
 #include <filesystem>
 #include <vector>
 #include <string>
+#include <algorithm>
 
 
 #define TRACK(x) "assets/sound" x
