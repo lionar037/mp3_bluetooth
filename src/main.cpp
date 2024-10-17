@@ -72,7 +72,7 @@ int main() {
 
     for(const auto& it_play_list : play_list){
         oled->clearScreen();
-        oled->displayText(it_play_list.substr(14).c_str(), 0, 10);  // Convertir std::string a C-string con c_str()
+        oled->displayTextScroll(it_play_list.substr(14).c_str(), 0, 10);  // Convertir std::string a C-string con c_str()
         std::cout<<it_play_list.substr(14).c_str()<<"\n";
         bcm2835_delay(1900);             
     }
