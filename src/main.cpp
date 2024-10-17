@@ -32,9 +32,10 @@ int main() {
     // Instancia del objeto BluetoothTool
     BLUETOOTH::BluetoothTool bluetoothTool;
 
+    std::string tema = {"assets/sounds/Dua Lipa TrainingSeason.mp3" };
 
-
-    std::unique_ptr<OLED::Oled_t> oled = std::make_unique<OLED::Oled_t>(128, 32, BCM2835_I2C_CLOCK_DIVIDER_626, 0x3C);
+    //std::unique_ptr<OLED::Oled_t>
+    auto  oled = std::make_unique<OLED::Oled_t>(128, 32, BCM2835_I2C_CLOCK_DIVIDER_626, 0x3C);
 
     if (!oled->begin()) {
         return -1;
@@ -42,17 +43,17 @@ int main() {
 
     oled->clearScreen();
     oled->displayText("bluetoothTool", 10, 10);
-    bcm2835_delay(5000);
+    bcm2835_delay(600);
 
-
-
-    
     // Dirección MAC del dispositivo Bluetooth a conectar
     const std::string dispositivo_mac = BLUETOOTH_DIR;  
     
     // Conectar al dispositivo Bluetooth usando la dirección MAC
     int sock = bluetoothTool.conectar(dispositivo_mac);
-    
+    oled->clearScreen();
+    oled->displayText(dispositivo_mac.c_str(), 10, 10);
+    bcm2835_delay(900);
+
     // Validar si la conexión fue exitosa
     if (sock == -1) {
         // Si falla la conexión, se imprime un mensaje de error y finaliza el programa
@@ -61,7 +62,10 @@ int main() {
     }
 
     // Reproducir el archivo MP3 "musica.mp3" a través del dispositivo Bluetooth conectado
-    bluetoothTool.reproducirMP3("musica.mp3");
+    oled->clearScreen();
+    oled->displayText(dispositivo_mac.c_str(), 10, 10);
+
+    bluetoothTool.reproducirMP3(tema.c_str());
 
     // Finalizar el programa exitosamente
     return 0;
