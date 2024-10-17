@@ -1,1 +1,1 @@
-g++ CMakeFiles/objects.dir/src/main.cpp.o CMakeFiles/objects.dir/src/tools/bluetooth_tool.cpp.o -o ../bin/Bluetooth_mp3  -lmpg123 -lao -lpthread 
+g++     CMakeFiles/objects.dir/src/main.cpp.o CMakeFiles/objects.dir/src/oled/oled.cpp.o CMakeFiles/objects.dir/src/tools/bluetooth_tool.cpp.o  -o ../bin/Bluetooth_mp3  -lmpg123 -lao -lpthread -lbcm2835 -lrt -lSSD1306_OLED_RPI 

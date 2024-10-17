@@ -1,5 +1,14 @@
 #!/bin/bash
 
+
+#dependencies :
+mkdir -vp ~/src
+cd ~/src
+git clone https://github.com/gavinlyonsrepo/SSD1306_OLED_RPI.git
+cd SSD1306_OLED_RPI
+make 
+sudo make install
+
 #dir 
 INC="/home/pi/src/mp3/include/assets/"
 

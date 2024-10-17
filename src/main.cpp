@@ -22,12 +22,30 @@
 
 #include <bluetooth_tool.hpp>
 #include <iostream>
+#include <oled.hpp>
+#include <memory>
+
 
 #define BLUETOOTH_DIR "00:13:7B:DC:2C:E0" // Dirección MAC del dispositivo Bluetooth
 
 int main() {
     // Instancia del objeto BluetoothTool
     BLUETOOTH::BluetoothTool bluetoothTool;
+
+
+
+    std::unique_ptr<OLED::Oled_t> oled = std::make_unique<OLED::Oled_t>(128, 32, BCM2835_I2C_CLOCK_DIVIDER_626, 0x3C);
+
+    if (!oled->begin()) {
+        return -1;
+    }
+
+    oled->clearScreen();
+    oled->displayText("bluetoothTool", 10, 10);
+    bcm2835_delay(5000);
+
+
+
     
     // Dirección MAC del dispositivo Bluetooth a conectar
     const std::string dispositivo_mac = BLUETOOTH_DIR;  

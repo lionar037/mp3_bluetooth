@@ -23,10 +23,11 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 
 # Incluir directorios de encabezados
 include_directories(    
-    include 
-    include/mp3
-    include/assets
+    	include 
+    	include/mp3
+    	include/assets
 	include/tools
+	include/oled
 )
 
 # Definir las rutas de salida de binarios y archivos objeto
@@ -51,7 +52,20 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 )
 
 # Añadir las bibliotecas manualmente
-target_link_libraries(${PROJECT_NAME} mpg123 ao pthread)
+#target_link_libraries(${PROJECT_NAME} mpg123 ao pthread)
+target_link_libraries(${PROJECT_NAME} 
+    mpg123 
+    ao 
+    pthread
+    bcm2835      # Añadir la librería bcm2835
+    rt           # Añadir la librería de tiempo real
+    SSD1306_OLED_RPI # Añadir la librería SSD1306
+)
 
 # Agregar opciones de compilación
-target_compile_options(${PROJECT_NAME} PRIVATE -pedantic)
+target_compile_options(${PROJECT_NAME} PRIVATE -pedantic )
+
+
+
+#agregar estas librerias 
+#-lbcm2835 -lrt -lSSD1306_OLED_RPI 
