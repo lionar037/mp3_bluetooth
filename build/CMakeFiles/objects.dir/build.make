@@ -102,9 +102,22 @@ CMakeFiles/objects.dir/src/oled/oled.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/objects.dir/src/oled/oled.cpp.s"
 	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/src/extern_bluetooth_mp3/src/oled/oled.cpp -o CMakeFiles/objects.dir/src/oled/oled.cpp.s
 
+CMakeFiles/objects.dir/src/sound/sound.cpp.o: CMakeFiles/objects.dir/flags.make
+CMakeFiles/objects.dir/src/sound/sound.cpp.o: ../src/sound/sound.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/src/extern_bluetooth_mp3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/objects.dir/src/sound/sound.cpp.o"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/objects.dir/src/sound/sound.cpp.o -c /home/pi/src/extern_bluetooth_mp3/src/sound/sound.cpp
+
+CMakeFiles/objects.dir/src/sound/sound.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/objects.dir/src/sound/sound.cpp.i"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/pi/src/extern_bluetooth_mp3/src/sound/sound.cpp > CMakeFiles/objects.dir/src/sound/sound.cpp.i
+
+CMakeFiles/objects.dir/src/sound/sound.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/objects.dir/src/sound/sound.cpp.s"
+	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/pi/src/extern_bluetooth_mp3/src/sound/sound.cpp -o CMakeFiles/objects.dir/src/sound/sound.cpp.s
+
 CMakeFiles/objects.dir/src/tools/bluetooth_tool.cpp.o: CMakeFiles/objects.dir/flags.make
 CMakeFiles/objects.dir/src/tools/bluetooth_tool.cpp.o: ../src/tools/bluetooth_tool.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/src/extern_bluetooth_mp3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/objects.dir/src/tools/bluetooth_tool.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/pi/src/extern_bluetooth_mp3/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/objects.dir/src/tools/bluetooth_tool.cpp.o"
 	g++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/objects.dir/src/tools/bluetooth_tool.cpp.o -c /home/pi/src/extern_bluetooth_mp3/src/tools/bluetooth_tool.cpp
 
 CMakeFiles/objects.dir/src/tools/bluetooth_tool.cpp.i: cmake_force
@@ -117,6 +130,7 @@ CMakeFiles/objects.dir/src/tools/bluetooth_tool.cpp.s: cmake_force
 
 objects: CMakeFiles/objects.dir/src/main.cpp.o
 objects: CMakeFiles/objects.dir/src/oled/oled.cpp.o
+objects: CMakeFiles/objects.dir/src/sound/sound.cpp.o
 objects: CMakeFiles/objects.dir/src/tools/bluetooth_tool.cpp.o
 objects: CMakeFiles/objects.dir/build.make
 

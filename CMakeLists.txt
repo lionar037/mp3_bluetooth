@@ -26,8 +26,9 @@ include_directories(
     	include 
     	include/mp3
     	include/assets
-	include/tools
-	include/oled
+	    include/tools
+	    include/oled
+        include/file
 )
 
 # Definir las rutas de salida de binarios y archivos objeto

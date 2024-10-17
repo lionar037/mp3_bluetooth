@@ -20,6 +20,7 @@
 //
 //////////////////////////////////////////////////////////////////
 
+#include <sound_list.hpp>
 #include <bluetooth_tool.hpp>
 #include <iostream>
 #include <oled.hpp>
@@ -34,6 +35,9 @@
 #define MACADDR_BLTH MOTO  // Dirección MAC del dispositivo Bluetooth
 
 int main() {
+    
+
+    SOUND_LIST::sound_list();
     
     const std::string device_mac = MACADDR_BLTH; 
     // Instancia del objeto BluetoothTool

@@ -209,6 +209,33 @@ src/oled/oled.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/objects.dir/build.make CMakeFiles/objects.dir/src/oled/oled.cpp.s
 .PHONY : src/oled/oled.cpp.s
 
+src/sound/sound.o: src/sound/sound.cpp.o
+
+.PHONY : src/sound/sound.o
+
+# target to build an object file
+src/sound/sound.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/objects.dir/build.make CMakeFiles/objects.dir/src/sound/sound.cpp.o
+.PHONY : src/sound/sound.cpp.o
+
+src/sound/sound.i: src/sound/sound.cpp.i
+
+.PHONY : src/sound/sound.i
+
+# target to preprocess a source file
+src/sound/sound.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/objects.dir/build.make CMakeFiles/objects.dir/src/sound/sound.cpp.i
+.PHONY : src/sound/sound.cpp.i
+
+src/sound/sound.s: src/sound/sound.cpp.s
+
+.PHONY : src/sound/sound.s
+
+# target to generate assembly for a file
+src/sound/sound.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/objects.dir/build.make CMakeFiles/objects.dir/src/sound/sound.cpp.s
+.PHONY : src/sound/sound.cpp.s
+
 src/tools/bluetooth_tool.o: src/tools/bluetooth_tool.cpp.o
 
 .PHONY : src/tools/bluetooth_tool.o
@@ -252,6 +279,9 @@ help:
 	@echo "... src/oled/oled.o"
 	@echo "... src/oled/oled.i"
 	@echo "... src/oled/oled.s"
+	@echo "... src/sound/sound.o"
+	@echo "... src/sound/sound.i"
+	@echo "... src/sound/sound.s"
 	@echo "... src/tools/bluetooth_tool.o"
 	@echo "... src/tools/bluetooth_tool.i"
 	@echo "... src/tools/bluetooth_tool.s"

@@ -83,10 +83,12 @@ Bluetooth_mp3_OBJECTS =
 Bluetooth_mp3_EXTERNAL_OBJECTS = \
 "/home/pi/src/extern_bluetooth_mp3/build/CMakeFiles/objects.dir/src/main.cpp.o" \
 "/home/pi/src/extern_bluetooth_mp3/build/CMakeFiles/objects.dir/src/oled/oled.cpp.o" \
+"/home/pi/src/extern_bluetooth_mp3/build/CMakeFiles/objects.dir/src/sound/sound.cpp.o" \
 "/home/pi/src/extern_bluetooth_mp3/build/CMakeFiles/objects.dir/src/tools/bluetooth_tool.cpp.o"
 
 ../bin/Bluetooth_mp3: CMakeFiles/objects.dir/src/main.cpp.o
 ../bin/Bluetooth_mp3: CMakeFiles/objects.dir/src/oled/oled.cpp.o
+../bin/Bluetooth_mp3: CMakeFiles/objects.dir/src/sound/sound.cpp.o
 ../bin/Bluetooth_mp3: CMakeFiles/objects.dir/src/tools/bluetooth_tool.cpp.o
 ../bin/Bluetooth_mp3: CMakeFiles/Bluetooth_mp3.dir/build.make
 ../bin/Bluetooth_mp3: CMakeFiles/Bluetooth_mp3.dir/link.txt

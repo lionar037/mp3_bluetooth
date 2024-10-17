@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/objects.dir/src/main.cpp.o"
   "CMakeFiles/objects.dir/src/oled/oled.cpp.o"
+  "CMakeFiles/objects.dir/src/sound/sound.cpp.o"
   "CMakeFiles/objects.dir/src/tools/bluetooth_tool.cpp.o"
 )
 

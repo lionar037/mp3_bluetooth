@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/pi/src/extern_bluetooth_mp3/src/main.cpp" "/home/pi/src/extern_bluetooth_mp3/build/CMakeFiles/objects.dir/src/main.cpp.o"
   "/home/pi/src/extern_bluetooth_mp3/src/oled/oled.cpp" "/home/pi/src/extern_bluetooth_mp3/build/CMakeFiles/objects.dir/src/oled/oled.cpp.o"
+  "/home/pi/src/extern_bluetooth_mp3/src/sound/sound.cpp" "/home/pi/src/extern_bluetooth_mp3/build/CMakeFiles/objects.dir/src/sound/sound.cpp.o"
   "/home/pi/src/extern_bluetooth_mp3/src/tools/bluetooth_tool.cpp" "/home/pi/src/extern_bluetooth_mp3/build/CMakeFiles/objects.dir/src/tools/bluetooth_tool.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
@@ -17,6 +18,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../include/assets"
   "../include/tools"
   "../include/oled"
+  "../include/file"
   )
 
 # Targets to which this target links.

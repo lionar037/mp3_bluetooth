@@ -4,7 +4,7 @@
 # compile CXX with g++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/pi/src/extern_bluetooth_mp3/include -I/home/pi/src/extern_bluetooth_mp3/include/mp3 -I/home/pi/src/extern_bluetooth_mp3/include/assets -I/home/pi/src/extern_bluetooth_mp3/include/tools -I/home/pi/src/extern_bluetooth_mp3/include/oled
+CXX_INCLUDES = -I/home/pi/src/extern_bluetooth_mp3/include -I/home/pi/src/extern_bluetooth_mp3/include/mp3 -I/home/pi/src/extern_bluetooth_mp3/include/assets -I/home/pi/src/extern_bluetooth_mp3/include/tools -I/home/pi/src/extern_bluetooth_mp3/include/oled -I/home/pi/src/extern_bluetooth_mp3/include/file
 
 CXX_FLAGS = -pedantic -std=gnu++17
 

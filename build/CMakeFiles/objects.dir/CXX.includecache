@@ -6,6 +6,16 @@
 
 #IncludeRegexTransform: 
 
+../include/assets/sound_list.hpp
+iostream
+-
+filesystem
+-
+vector
+-
+string
+-
+
 ../include/oled/SSD1306_OLED.hpp
 cstdio
 -
@@ -65,6 +75,8 @@ bluetooth/rfcomm.h
 -
 
 /home/pi/src/extern_bluetooth_mp3/src/main.cpp
+sound_list.hpp
+-
 bluetooth_tool.hpp
 -
 iostream
@@ -72,5 +84,9 @@ iostream
 oled.hpp
 -
 memory
+-
+
+/home/pi/src/extern_bluetooth_mp3/src/sound/sound.cpp
+sound_list.hpp
 -
 
