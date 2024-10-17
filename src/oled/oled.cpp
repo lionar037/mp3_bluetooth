@@ -86,8 +86,6 @@ namespace OLED{
         myOLED.OLED_I2C_OFF();
     }
 
-
-
     void Oled_t::demo(){
     //bool colour = 1;
     //myOLED.fillRect(0, 10, 20, 20, colour);
@@ -159,8 +157,8 @@ namespace OLED{
 	myOLED.print("SCROLL EST 504  ");
 	printf("OLED Scroll test 504\r\n");
 	myOLED.OLEDupdate();
-	bcm2835_delay(2500);
 
+	bcm2835_delay(2500);
 	myOLED.OLEDStartScrollRight(0, 0x0F);
 	bcm2835_delay(3000);
 	myOLED.OLEDStopScroll();
@@ -232,4 +230,11 @@ namespace OLED{
 	bcm2835_delay(3000);
     */
     }
+
+    const std::vector <std::string>& Oled_t::convertToMayuscule(const std::vector <std::string>& display_text ){
+        std::transform(display_text.begin(), display_text.end(), display_text.begin(), ::toupper); 
+    return display_text;    
+    }
+
+
 }
