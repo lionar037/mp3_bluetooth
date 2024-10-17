@@ -145,6 +145,8 @@ namespace OLED{
 	myOLED.OLEDclearBuffer();
 
 	// ***** Test 504 Scroll **
+
+
 	myOLED.setCursor(16,16 );
 	myOLED.print("SCROLL EST 504  ");
 	printf("OLED Scroll test 504\r\n");
