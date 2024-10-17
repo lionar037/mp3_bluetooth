@@ -87,16 +87,16 @@ namespace OLED{
 myOLED.setFontNum(OLEDFont_ArialRound);
 	myOLED.setRotation(OLED_Degrees_0);
 	// Define a buffer to cover whole screen 
-	uint8_t  screenBuffer[128*32]; 
+	uint8_t  screenBuffer[FULLSCREEN]; 
 	if (!myOLED.OLEDSetBufferPtr(myOLEDwidth, myOLEDheight, screenBuffer, sizeof(screenBuffer))) return;
 	myOLED.OLEDclearBuffer(); // clear the buffer
 
 	// Set text parameters
 	myOLED.setTextColor(BLACK);
-	myOLED.setTextSize(1);
+	//myOLED.setTextSize(1);
 
 	//  ** Test 501 OLED display enable and disable **
-	myOLED.setCursor(0, 30);
+	myOLED.setCursor(0, 0);
 	myOLED.print("Disable test 501");
 	printf("OLED Disable test 501\r\n");
 	myOLED.OLEDupdate();
