@@ -42,17 +42,18 @@ int main() {
     }
 
     oled->clearScreen();
-    oled->displayText("bluetoothTool", 10, 10);
+    oled->displayText("Bluetooth mp3", 0, 0);
     bcm2835_delay(600);
 
     // Dirección MAC del dispositivo Bluetooth a conectar
-    const std::string dispositivo_mac = BLUETOOTH_DIR;  
+    const std::string device_mac = BLUETOOTH_DIR;  
     
+    //oled->clearScreen();
+    oled->displayText(device_mac.c_str(), 0,10);
+    bcm2835_delay(900); 
     // Conectar al dispositivo Bluetooth usando la dirección MAC
-    int sock = bluetoothTool.conectar(dispositivo_mac);
-    oled->clearScreen();
-    oled->displayText(dispositivo_mac.c_str(), 10, 10);
-    bcm2835_delay(900);
+    int sock = bluetoothTool.conectar(device_mac);
+
 
     // Validar si la conexión fue exitosa
     if (sock == -1) {
@@ -62,8 +63,8 @@ int main() {
     }
 
     // Reproducir el archivo MP3 "musica.mp3" a través del dispositivo Bluetooth conectado
-    oled->clearScreen();
-    oled->displayText(dispositivo_mac.c_str(), 10, 10);
+    //oled->clearScreen();
+    oled->displayText(tema.c_str(), 0, 20);
 
     bluetoothTool.reproducirMP3(tema.c_str());
 
