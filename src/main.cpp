@@ -52,6 +52,8 @@ int main() {
     //std::unique_ptr<OLED::Oled_t>
     auto  oled = std::make_unique<OLED::Oled_t>(128, 32, BCM2835_I2C_CLOCK_DIVIDER_626, 0x3C);
 
+    oled->demo();
+        
     if (!oled->begin()) {
         return -1;
     }

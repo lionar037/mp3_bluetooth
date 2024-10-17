@@ -86,3 +86,9 @@ oled.hpp
 memory
 -
 
+/home/pi/src/extern_bluetooth_mp3/src/oled/oled.cpp
+oled.hpp
+/home/pi/src/extern_bluetooth_mp3/src/oled/oled.hpp
+SSD1306_OLED.hpp
+/home/pi/src/extern_bluetooth_mp3/src/oled/SSD1306_OLED.hpp
+

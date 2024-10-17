@@ -18,10 +18,14 @@ public:
     void clearScreen();
     void displayText(const char* text, int x, int y);
     void powerDown();
+//protected:
+    void demo();
 
 private:
     uint16_t width_;
     uint16_t height_;
+    uint16_t myOLEDwidth;
+    uint16_t myOLEDheight;
     uint16_t i2c_speed_;
     uint8_t i2c_address_;
     bool i2c_debug_;
