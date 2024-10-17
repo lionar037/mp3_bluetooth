@@ -92,7 +92,7 @@ int main() {
 
     for(const auto& it_play_list : play_list){
         oled->clearScreen();
-        oled->displayText(it_play_list.c_str(), 0, 10);  // Convertir std::string a C-string con c_str()
+        oled->displayText(it_play_list.substr(14).c_str(), 0, 10);  // Convertir std::string a C-string con c_str()
         bluetoothTool.reproducirMP3(it_play_list.c_str());        
     }
 
