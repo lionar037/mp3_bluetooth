@@ -51,6 +51,12 @@ namespace OLED{
         myOLED.setCursor(x, y);
         myOLED.print(text);
         myOLED.OLEDupdate();
+		
+		myOLED.OLEDStartScrollRight(0, 0x0F);
+		
+		bcm2835_delay(3000);
+		myOLED.OLEDStopScroll();
+
     }
 
     void Oled_t::powerDown() {
@@ -139,7 +145,7 @@ namespace OLED{
 	myOLED.OLEDclearBuffer();
 
 	// ***** Test 504 Scroll **
-	myOLED.setCursor(20,12 );
+	myOLED.setCursor(16,16 );
 	myOLED.print("SCROLL EST 504  ");
 	printf("OLED Scroll test 504\r\n");
 	myOLED.OLEDupdate();
