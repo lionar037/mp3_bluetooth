@@ -58,7 +58,7 @@ int main() {
         return -1;
     }
 
-oled->demo();
+    //oled->demo();
 
     oled->clearScreen();
     oled->displayText("MP3 to Bluetooth ", 0, 0);
