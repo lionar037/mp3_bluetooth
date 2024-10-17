@@ -231,7 +231,7 @@ namespace OLED{
     */
     }
 
-    const std::vector <std::string>& Oled_t::convertToMayuscule(const std::vector <std::string>& display_text ){
+    const std::vector <std::string>& Oled_t::convertToMayuscule( std::vector <std::string>& display_text ){
 		/*
         //std::transform(display_text.begin(), display_text.end(), display_text.begin(), ::toupper); 
 		for (auto& str : display_text) 
