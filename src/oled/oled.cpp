@@ -84,7 +84,7 @@ namespace OLED{
     //myOLED.fillRoundRect(0, 40, 40, 20, 10, !colour);
     //myOLED.drawRect(70 + i, 40 + i, 50 - i * 2, 20 - i * 2, WHITE);
     //myOLED.OLEDupdate();
-myOLED.setFontNum(OLEDFont_ArialRound);
+//myOLED.setFontNum(OLEDFont_ArialRound);
 	myOLED.setRotation(OLED_Degrees_0);
 	// Define a buffer to cover whole screen 
 	uint8_t  screenBuffer[FULLSCREEN]; 
