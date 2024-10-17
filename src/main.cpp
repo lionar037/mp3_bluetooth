@@ -69,18 +69,16 @@ int main() {
     oled->displayText(device_mac.c_str(), 0,10);
     bcm2835_delay(1600); 
 
-auto stash_list = oled->convertToMayuscule(play_list);
+auto stash_list = oled->convertToMayuscule(play_list.substr(14));
 
 
 for(const auto& it_play_list : stash_list){
     oled->clearScreen();
     
     // Convertir a mayúsculas la subcadena y luego mostrarla en la pantalla OLED
-    std::string display_text = it_play_list.substr(14); // Obtener la subcadena
-    //std::transform(display_text.begin(), display_text.end(), display_text.begin(), ::toupper); // Convertir a mayúsculas
-    
-    oled->displayText(display_text.c_str(), 0, 0); // Pasar la cadena convertida a C-string
-    std::cout << display_text << "\n"; // Imprimir la cadena convertida a mayúsculas
+    //std::string display_text = it_play_list.substr(14); // Obtener la subcadena    
+    oled->displayText(it_play_list.c_str(), 0, 0); // Pasar la cadena convertida a C-string
+    std::cout << it_play_list << "\n"; // Imprimir la cadena convertida a mayúsculas
     
     bcm2835_delay(1900);             
 }
