@@ -44,7 +44,8 @@ namespace OLED{
     }
 
     void Oled_t::displayText(const char* text, int x, int y) {
-        myOLED.setFontNum(OLEDFont_ArialRound);
+        //myOLED.setFontNum(OLEDFont_ArialRound);
+        myOLED.setFontNum(OLEDFont_Default);
         myOLED.setTextColor(BLACK, WHITE); 
         myOLED.setTextColor(WHITE);
         myOLED.setCursor(x, y);
