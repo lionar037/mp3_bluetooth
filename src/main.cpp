@@ -22,10 +22,10 @@
 
 #include <sound_list.hpp>
 #include <bluetooth_tool.hpp>
-#include <iostream>
 #include <oled.hpp>
+#include <iostream>
 #include <memory>
-
+#include <algorithm>
 
 //pair D8:3A:DD:18:46:7F
 #define RPI4    "D8:3A:DD:18:46:7F"            //example
@@ -70,12 +70,18 @@ int main() {
     bcm2835_delay(1600); 
 
 
-    for(const auto& it_play_list : play_list){
-        oled->clearScreen();
-        oled->displayText(it_play_list.substr(14).c_str(), 0, 0);  // Convertir std::string a C-string con c_str()
-        std::cout<<it_play_list.substr(14).c_str()<<"\n";
-        bcm2835_delay(1900);             
-    }
+for(const auto& it_play_list : play_list){
+    oled->clearScreen();
+    
+    // Convertir a mayúsculas la subcadena y luego mostrarla en la pantalla OLED
+    std::string display_text = it_play_list.substr(14); // Obtener la subcadena
+    std::transform(display_text.begin(), display_text.end(), display_text.begin(), ::toupper); // Convertir a mayúsculas
+    
+    oled->displayText(display_text.c_str(), 0, 0); // Pasar la cadena convertida a C-string
+    std::cout << display_text << "\n"; // Imprimir la cadena convertida a mayúsculas
+    
+    bcm2835_delay(1900);             
+}
 
 
     // Conectar al dispositivo Bluetooth usando la dirección MAC
