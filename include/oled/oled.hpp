@@ -24,7 +24,7 @@ namespace OLED{
         void powerDown();
     //protected:
         void demo();
-        const std::vector<std::string>& convertToMayuscule(const std::vector<std::string>& display_text );
+        const std::vector <std::string>& convertToMayuscule(std::vector <std::string>& display_text);
 
     private:
         uint16_t width_;
