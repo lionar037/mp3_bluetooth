@@ -144,7 +144,7 @@ class SSD1306 : public SSD1306_graphics  {
 	uint16_t _LibraryVersionNum = 161; /**< Library version number */
 
 	uint8_t _OLED_WIDTH=128;      /**< Width of OLED Screen in pixels */
-	uint8_t _OLED_HEIGHT=64;    /**< Height of OLED Screen in pixels */
+	uint8_t _OLED_HEIGHT=32;    /**< Height of OLED Screen in pixels */
 	uint8_t _OLED_PAGE_NUM=(_OLED_HEIGHT/8); /**< Number of byte size pages OLED screen is divided into */
 
 	uint8_t* OLEDbuffer = nullptr; /**< pointer to buffer which holds screen data */
