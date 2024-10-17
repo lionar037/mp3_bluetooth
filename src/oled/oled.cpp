@@ -148,18 +148,22 @@ namespace OLED{
 	myOLED.OLEDStartScrollRight(0, 0x0F);
 	bcm2835_delay(3000);
 	myOLED.OLEDStopScroll();
+	printf("OLEDStartScrollRight\r\n");
 	
 	myOLED.OLEDStartScrollLeft(0, 0x0F);
 	bcm2835_delay(3000);
 	myOLED.OLEDStopScroll();
+	printf("OLEDStartScrollLeft\r\n");
 
 	myOLED.OLEDStartScrollDiagRight(0, 0x07);
 	bcm2835_delay(3000);
 	myOLED.OLEDStopScroll();
+	printf("OLEDStartScrollDiagRight\r\n");
  	
 	myOLED.OLEDStartScrollDiagLeft(0, 0x07);
 	bcm2835_delay(3000);
 	myOLED.OLEDStopScroll();
+	printf("OLEDStartScrollDiagLeft\r\n");
  	
  	
     /*
