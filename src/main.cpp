@@ -66,7 +66,7 @@ int main() {
 
     // Dirección MAC del dispositivo Bluetooth a conectar
      
-    oled->displayText(device_mac.c_str(), 36,20);
+    oled->displayText(device_mac.c_str(), 16,20);
     bcm2835_delay(1600); 
 
 auto stash_list = oled->convertToMayuscule(play_list);
@@ -77,7 +77,7 @@ for(const auto& it_play_list : stash_list){
     std::string display_text = it_play_list.substr(14, it_play_list.size() - 18);    oled->displayText(it_play_list.substr(14).c_str(), 0, 0); // Pasar la cadena convertida a C-string
     std::cout << display_text << "\n"; // Imprimir la cadena convertida a mayúsculas
     oled->clearScreen();
-    oled->displayText(display_text.c_str(), 16, 0);
+    oled->displayText(display_text.c_str(), 0 , 16);
     bcm2835_delay(1900);             
 }
 
