@@ -38,8 +38,8 @@ int SoundList_t::sound_list() {
 }
 
  const std::vector <std::string>& SoundList_t::convertToMayuscule(std::vector<std::string>& display_text ){
-	//for (auto& str : display_text) 
-    //std::transform(str.begin(), str.end(), str.begin(), [](unsigned char c) { return std::toupper(c); });  // Convertir cada cadena a mayúsculas
+	for (auto& str : display_text) 
+    std::transform(str.begin(), str.end(), str.begin(), [](unsigned char c) { return std::toupper(c); });  // Convertir cada cadena a mayúsculas
     return display_text;    
     }
 
