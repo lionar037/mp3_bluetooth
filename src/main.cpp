@@ -37,8 +37,9 @@
 int main() {
     
 
-    SOUND_LIST::sound_list();
+    auto sound_l = std::make_unique<SOUND_LIST::SoundList_t>();
     
+
     const std::string device_mac = MACADDR_BLTH; 
     // Instancia del objeto BluetoothTool
     BLUETOOTH::BluetoothTool bluetoothTool;

@@ -86,7 +86,3 @@ oled.hpp
 memory
 -
 
-/home/pi/src/extern_bluetooth_mp3/src/sound/sound.cpp
-sound_list.hpp
--
-

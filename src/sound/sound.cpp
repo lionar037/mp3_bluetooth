@@ -3,9 +3,13 @@
 namespace SOUND_LIST{
 
 // Utilizando la librería estándar de filesystem
-namespace fs = std::filesystem;
 
-int sound_list() {
+    SoundList_t::SoundList_t()
+    {
+        sound_list();
+    }
+
+int SoundList_t::sound_list() {
     std::string folderPath = "assets/sounds"; // Cambia esto por la ruta a tu carpeta
     std::vector<std::string> mp3Files;
 
@@ -15,6 +19,7 @@ int sound_list() {
             // Verificar si la extensión es .mp3 (case insensitive)
             if (entry.path().extension() == ".mp3") {
                 mp3Files.push_back(entry.path().string());
+                mp3_list.push_back(entry.path().string());
             }
         }
     } catch (const fs::filesystem_error& e) {
