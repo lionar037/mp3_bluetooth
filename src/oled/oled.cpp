@@ -52,7 +52,7 @@ namespace OLED{
         myOLED.print(text);
         myOLED.OLEDupdate();
 		
-		myOLED.OLEDStartScrollDiagLeft (0, 0x0F);
+		myOLED.OLEDStartScrollLeft (0, 0x0F);
 		
 		bcm2835_delay(2000);
 		myOLED.OLEDStopScroll();
