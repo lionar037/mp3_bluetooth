@@ -28,7 +28,7 @@ int SoundList_t::sound_list() {
     }
 
     // Mostrar la lista de archivos MP3 encontrados
-    std::cout << "Archivos MP3 encontrados en la carpeta:\n";
+    std::cout << "MP3 encontrados en la carpeta:\n";
     for (const auto& file : mp3Files) {
         std::cout << file << std::endl;
     }

@@ -22,6 +22,8 @@ namespace SOUND_LIST{
                 //sound_list() ;
                 return mp3_list;
             }
+
+        protected:
             int sound_list() ;
 
         private:            
