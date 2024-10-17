@@ -77,7 +77,7 @@ for(const auto& it_play_list : oled->convertToMayuscule(play_list)){
     
     // Convertir a mayúsculas la subcadena y luego mostrarla en la pantalla OLED
     std::string display_text = it_play_list.substr(14); // Obtener la subcadena
-    std::transform(display_text.begin(), display_text.end(), display_text.begin(), ::toupper); // Convertir a mayúsculas
+    //std::transform(display_text.begin(), display_text.end(), display_text.begin(), ::toupper); // Convertir a mayúsculas
     
     oled->displayText(display_text.c_str(), 0, 0); // Pasar la cadena convertida a C-string
     std::cout << display_text << "\n"; // Imprimir la cadena convertida a mayúsculas

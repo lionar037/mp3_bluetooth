@@ -38,7 +38,9 @@ int SoundList_t::sound_list() {
 }
 
     const std::vector <std::string>& SoundList_t::convertToMayuscule(const std::vector <std::string>& display_text ){
-        std::transform(display_text.begin(), display_text.end(), display_text.begin(), ::toupper); 
+        //std::transform(display_text.begin(), display_text.end(), display_text.begin(), ::toupper); 
+        std::transform(display_text.begin(), display_text.end(), display_text.begin(), [](unsigned char c) { return std::toupper(c); });
+
     return display_text;    
     }
 
