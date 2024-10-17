@@ -58,23 +58,23 @@ int main() {
         return -1;
     }
 
-//oled->demo();
+oled->demo();
 
     oled->clearScreen();
-    oled->displayText("Bluetooth mp3", 0, 0);
-    bcm2835_delay(600);
+    oled->displayText("MP3 to Bluetooth ", 0, 0);
+    bcm2835_delay(1600);
 
     // Dirección MAC del dispositivo Bluetooth a conectar
      
     oled->displayText(device_mac.c_str(), 0,10);
-    bcm2835_delay(900); 
+    bcm2835_delay(1600); 
 
 
     for(const auto& it_play_list : play_list){
         oled->clearScreen();
         oled->displayText(it_play_list.substr(14).c_str(), 0, 10);  // Convertir std::string a C-string con c_str()
         std::cout<<it_play_list.substr(14).c_str()<<"\n";
-        bcm2835_delay(900);             
+        bcm2835_delay(1900);             
     }
 
 

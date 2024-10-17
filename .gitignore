@@ -1,10 +1,8 @@
-
-
 codeAlls.cpp
 .DS_Store
 assets/sound
-bin/
+bin/*
 build/*
 .vscode/
-obj/
-olds/
+obj/*
+olds/*
