@@ -35,56 +35,43 @@
 #define MACADDR_BLTH MOTO  // Dirección MAC del dispositivo Bluetooth
 
 int main() {
-    
-
     auto list = std::make_unique<SOUND_LIST::SoundList_t>();
-
-
 
     const std::string device_mac = MACADDR_BLTH; 
     // Instancia del objeto BluetoothTool
     BLUETOOTH::BluetoothTool bluetoothTool;
 
-    //std::string tema = {"assets/sounds/Dua Lipa TrainingSeason.mp3" };
-    //std::string 
     auto play_list = list->get_list() ;
 
     //std::unique_ptr<OLED::Oled_t>
     auto  oled = std::make_unique<OLED::Oled_t>(128, 32, BCM2835_I2C_CLOCK_DIVIDER_626, 0x3C);
 
-    
-
     if (!oled->begin()) {
         return -1;
     }
 
-    //oled->demo();
-
     oled->clearScreen();
     oled->displayText("MP3 to Bluetooth ", 0, 0);
     bcm2835_delay(1600);
-
-    // Dirección MAC del dispositivo Bluetooth a conectar
      
     oled->displayText(device_mac.c_str(), 16,20);
     bcm2835_delay(1600); 
 
-auto stash_list = oled->convertToMayuscule(play_list);
+    auto stash_list = oled->convertToMayuscule(play_list);
 
-
-for(const auto& it_play_list : stash_list){
-    // Convertir a mayúsculas la subcadena y luego mostrarla en la pantalla OLED
-    std::string display_text = it_play_list.substr(14, it_play_list.size() - 18);    oled->displayText(it_play_list.substr(14).c_str(), 0, 0); // Pasar la cadena convertida a C-string
-    std::cout << display_text << "\n"; // Imprimir la cadena convertida a mayúsculas
-    oled->clearScreen();
-    oled->displayText(display_text.c_str(), 0 , 16);
-    bcm2835_delay(1900);             
-}
+    for(const auto& it_play_list : stash_list){
+        // Convertir a mayúsculas la subcadena y luego mostrarla en la pantalla OLED
+        std::string display_text = it_play_list.substr(14, it_play_list.size() - 18);    oled->displayText(it_play_list.substr(14).c_str(), 0, 0); // Pasar la cadena convertida a C-string
+        std::cout << display_text << "\n"; // Imprimir la cadena convertida a mayúsculas
+        oled->clearScreen();
+        bcm2835_delay(1);
+        oled->displayText(display_text.c_str(), 0 , 16);
+        bcm2835_delay(1900);             
+    }
 
 
     // Conectar al dispositivo Bluetooth usando la dirección MAC
     int sock = bluetoothTool.conectar(device_mac);
-
 
     // Validar si la conexión fue exitosa
     if (sock == -1) {
@@ -100,8 +87,6 @@ for(const auto& it_play_list : stash_list){
         oled->displayText(it_play_list.substr(14).c_str(), 0, 10);  // Convertir std::string a C-string con c_str()
         bluetoothTool.reproducirMP3(it_play_list.c_str());        
     }
-
-    
 
     // Finalizar el programa exitosamente
     return 0;
