@@ -15,6 +15,8 @@ vector
 -
 string
 -
+algorithm
+-
 
 ../include/oled/SSD1306_OLED.hpp
 cstdio
@@ -65,6 +67,12 @@ SSD1306_OLED.hpp
 -
 memory
 -
+vector
+-
+algorithm
+-
+string
+-
 
 ../include/tools/bluetooth_tool.hpp
 string
@@ -87,10 +95,4 @@ memory
 -
 algorithm
 -
-
-/home/pi/src/extern_bluetooth_mp3/src/oled/oled.cpp
-oled.hpp
-/home/pi/src/extern_bluetooth_mp3/src/oled/oled.hpp
-SSD1306_OLED.hpp
-/home/pi/src/extern_bluetooth_mp3/src/oled/SSD1306_OLED.hpp
 

@@ -28,11 +28,12 @@
 #include <algorithm>
 
 //pair D8:3A:DD:18:46:7F
+#define XFW_BT "04:D4:95:2B:8E:41"
 #define RPI4    "D8:3A:DD:18:46:7F"            //example
 #define RPI2W   "B8:27:EB:0B:70:57"           //example
 #define SONY    "00:13:7B:DC:2C:E0" 
 #define MOTO    "6C:97:6D:55:CE:99"
-#define MACADDR_BLTH MOTO  // Dirección MAC del dispositivo Bluetooth
+#define MACADDR_BLTH XFW_BT  // Dirección MAC del dispositivo Bluetooth
 
 int main() {
     auto list = std::make_unique<SOUND_LIST::SoundList_t>();
@@ -43,7 +44,6 @@ int main() {
 
     auto play_list = list->get_list() ;
 
-    //std::unique_ptr<OLED::Oled_t>
     auto  oled = std::make_unique<OLED::Oled_t>(128, 32, BCM2835_I2C_CLOCK_DIVIDER_626, 0x3C);
 
     if (!oled->begin()) {
