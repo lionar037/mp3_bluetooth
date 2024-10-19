@@ -52,10 +52,10 @@ int main() {
 
     oled->clearScreen();
     oled->displayText("MP3 to Bluetooth ", 0, 0);
-    bcm2835_delay(1600);
+    bcm2835_delay(900);
      
     oled->displayText(device_mac.c_str(), 16,20);
-    bcm2835_delay(1600); 
+    bcm2835_delay(900); 
 
     auto stash_list = oled->convertToMayuscule(play_list);
 
@@ -66,7 +66,7 @@ int main() {
         oled->clearScreen();
         bcm2835_delay(1);
         oled->displayText(display_text.c_str(), 0 , 16);
-        bcm2835_delay(1900);             
+        bcm2835_delay(900);             
     }
 
 

@@ -43,7 +43,7 @@ namespace BLUETOOTH {
         // Separar la dirección MAC en seis valores hexadecimales
 
 
-        std::cout<<"device mac_str : "<<mac_str.c_str();
+        std::cout<<"device mac_str : "<<mac_str.c_str()<<"\n";
         if (sscanf(mac_str.c_str(), "%x:%x:%x:%x:%x:%x", 
             &values[0], &values[1], &values[2], 
             &values[3], &values[4], &values[5]) != 6) {
