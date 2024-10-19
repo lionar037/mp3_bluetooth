@@ -48,6 +48,8 @@ namespace BLUETOOTH {
         // Toma el nombre del archivo y utiliza un comando del sistema
         // para reproducirlo.
         void reproducirMP3(const std::string& archivo);
+        
+        void stringToBdAddr(const std::string& mac_str, bdaddr_t* bdaddr) ;
 
     private:
         int sock;  // Socket para la conexión Bluetooth

@@ -96,3 +96,27 @@ memory
 algorithm
 -
 
+/home/pi/src/extern_bluetooth_mp3/src/tools/bluetooth_tool.cpp
+bluetooth_tool.hpp
+-
+iostream
+-
+cstdlib
+-
+unistd.h
+-
+cstring
+-
+bluetooth/hci.h
+-
+bluetooth/hci_lib.h
+-
+bluetooth/bluetooth.h
+-
+bluetooth/rfcomm.h
+-
+sstream
+-
+iomanip
+-
+
