@@ -9,20 +9,19 @@
 #include "oled.hpp"
 #include "SSD1306_OLED.hpp" // La librería que utilizas para la pantalla
 
-#define FULLSCREEN (width_ * (height_ / 8))
+#define FULLSCREEN (myOLEDwidth * (myOLEDheight / 8))
 
 
 namespace OLED{
 
     Oled_t::Oled_t(uint16_t width, uint16_t height, uint16_t i2c_speed, uint8_t i2c_address)
-        : width_(width), 
-		height_(height), 
+        : 
+		myOLEDwidth(width), 
+		myOLEDheight(height), 
 		i2c_speed_(i2c_speed), 
 		i2c_address_(i2c_address), 
 		i2c_debug_(false), 
 		screenBuffer_(nullptr),
-        myOLEDwidth{width_} , 
-		myOLEDheight{height} ,
 		myOLED(width, height) // Inicializar el objeto SSD1306 aquí
 
     {}
@@ -46,7 +45,7 @@ namespace OLED{
 
         myOLED.OLEDbegin(i2c_speed_, i2c_address_, i2c_debug_);
         screenBuffer_ = new uint8_t[FULLSCREEN];
-        myOLED.OLEDSetBufferPtr(width_, height_, screenBuffer_, FULLSCREEN);
+        myOLED.OLEDSetBufferPtr(myOLEDwidth, myOLEDheight, screenBuffer_, FULLSCREEN);
         //myOLED.OLEDFillScreen(0xF0, 0);
         bcm2835_delay(100);
 
