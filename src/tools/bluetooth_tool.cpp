@@ -72,6 +72,38 @@ namespace BLUETOOTH {
     // Método para conectar al dispositivo Bluetooth
     // Toma la dirección MAC del dispositivo, crea un socket Bluetooth,
     // convierte la dirección a `bdaddr_t` y trata de conectarse al dispositivo.
+
+int BluetoothTool::conectar(const std::string& mac_address) {
+    struct sockaddr_rc addr;  // Estructura para la dirección RFCOMM
+    memset(&addr, 0, sizeof(addr)); // Inicializa todos los campos de la estructura a 0
+    int status;
+
+    // Crear socket Bluetooth
+    sock = socket(AF_BLUETOOTH, SOCK_STREAM, BTPROTO_RFCOMM);
+    if (sock == -1) {
+        perror("Error al crear el socket");
+        return -1;
+    }
+
+    addr.rc_family = AF_BLUETOOTH;  // Especificar la familia Bluetooth
+    addr.rc_channel = (uint8_t)1;   // Asignar el canal RFCOMM (1 por defecto)
+
+    // Convertir manualmente la dirección MAC a `bdaddr_t`
+    stringToBdAddr(mac_address, &addr.rc_bdaddr);
+
+    // Intentar conectar al dispositivo
+    status = connect(sock, (struct sockaddr*)&addr, sizeof(addr));
+    if (status == -1) {
+        perror("Error al conectar");
+        return -1;
+    }
+
+    // Si la conexión es exitosa, se imprime un mensaje
+    std::cout << "Conectado al dispositivo Bluetooth: " << mac_address << std::endl;
+    return sock;
+}
+
+/*
     int BluetoothTool::conectar(const std::string& mac_address) {
         struct sockaddr_rc addr = { 0 };  // Estructura para la dirección RFCOMM
         int status;
@@ -100,6 +132,10 @@ namespace BLUETOOTH {
         std::cout << "Conectado al dispositivo Bluetooth: " << mac_address << std::endl;
         return sock;
     }
+
+*/
+
+
 
     // Método para reproducir un archivo MP3 en el dispositivo Bluetooth conectado
     // Utiliza el comando del sistema `mpg123` para reproducir el archivo especificado.

@@ -1,3 +1,11 @@
+////////////////////////////////////////////////////////////////////////////                
+//          
+//      
+//                oled.cpp
+//
+//
+////////////////////////////////////////////////////////////////////////////
+
 #include "oled.hpp"
 #include "SSD1306_OLED.hpp" // La librería que utilizas para la pantalla
 
@@ -13,9 +21,10 @@ namespace OLED{
 		i2c_address_(i2c_address), 
 		i2c_debug_(false), 
 		screenBuffer_(nullptr),
-        myOLED(width, height) ,// Inicializar el objeto SSD1306 aquí
         myOLEDwidth{width_} , 
-		myOLEDheight{height}
+		myOLEDheight{height} ,
+		myOLED(width, height) // Inicializar el objeto SSD1306 aquí
+
     {}
 
     Oled_t::~Oled_t() {

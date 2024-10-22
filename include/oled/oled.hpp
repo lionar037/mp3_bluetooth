@@ -1,5 +1,10 @@
-//#ifndef OLED_T_HPP
-//#define OLED_T_HPP
+////////////////////////////////////////////////////////////////////////////                
+//                
+//
+//                          oled.hpp
+//
+//
+////////////////////////////////////////////////////////////////////////////
 
 #pragma once
 
@@ -22,7 +27,6 @@ namespace OLED{
         void displayText(const char* text, int x, int y);
         void displayTextScroll(const char* text, int x, int y) ;
         void powerDown();
-    //protected:
         void demo();
         const std::vector <std::string>& convertToMayuscule(std::vector <std::string>& display_text);
     
@@ -32,8 +36,7 @@ namespace OLED{
 
     private:
         uint16_t width_;
-        uint16_t height_;                        
-      
+        uint16_t height_;                           
         uint16_t i2c_speed_;
         uint8_t i2c_address_;
         bool i2c_debug_;
@@ -41,9 +44,5 @@ namespace OLED{
         uint16_t myOLEDwidth;
         uint16_t myOLEDheight;
         SSD1306 myOLED;
-
     };
-
-    //#endif // OLED_T_HPP
-
 }
