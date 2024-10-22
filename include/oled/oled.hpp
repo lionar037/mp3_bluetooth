@@ -25,19 +25,23 @@ namespace OLED{
     //protected:
         void demo();
         const std::vector <std::string>& convertToMayuscule(std::vector <std::string>& display_text);
+    
+    protected:
+        bool initI2C();
+        void closeI2C();
 
     private:
         uint16_t width_;
-        uint16_t height_;
-        uint16_t myOLEDwidth;
-        uint16_t myOLEDheight;
+        uint16_t height_;                        
+      
         uint16_t i2c_speed_;
         uint8_t i2c_address_;
         bool i2c_debug_;
         uint8_t* screenBuffer_;
+        uint16_t myOLEDwidth;
+        uint16_t myOLEDheight;
         SSD1306 myOLED;
-        bool initI2C();
-        void closeI2C();
+
     };
 
     //#endif // OLED_T_HPP

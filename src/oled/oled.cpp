@@ -7,9 +7,15 @@
 namespace OLED{
 
     Oled_t::Oled_t(uint16_t width, uint16_t height, uint16_t i2c_speed, uint8_t i2c_address)
-        : width_(width), height_(height), i2c_speed_(i2c_speed), i2c_address_(i2c_address), i2c_debug_(false), screenBuffer_(nullptr),
+        : width_(width), 
+		height_(height), 
+		i2c_speed_(i2c_speed), 
+		i2c_address_(i2c_address), 
+		i2c_debug_(false), 
+		screenBuffer_(nullptr),
         myOLED(width, height) ,// Inicializar el objeto SSD1306 aquí
-        myOLEDwidth{width_} , myOLEDheight{height}
+        myOLEDwidth{width_} , 
+		myOLEDheight{height}
     {}
 
     Oled_t::~Oled_t() {
